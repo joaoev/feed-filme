@@ -6,6 +6,23 @@ import styles from './App.module.css';
 
 import './global.css';
 
+const posts = [
+  {
+    id: 1,
+    author: {
+      avatarUrl: 'https://github.com/joaoev.png',
+      name: 'João',
+      role: 'Web Developer'
+    },
+    content: [
+      { type: 'paragraph', content: 'Linha 1' },
+      { type: 'paragraph', content: 'Linha 2' },
+      { type: 'link', content: 'link' }
+    ],
+    publishedAt: new Date('2024-01-16 01:17:00'),
+  },
+];
+
 export function App() {
   return (
     <div>
@@ -14,14 +31,15 @@ export function App() {
       <div className={styles.wrapper}>
         <Sidebar />
         <main>
-          <Post
-            author="João"
-            content="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime itaque quas corporis beatae veritatis, reprehenderit asperiores vitae quod possimus qui dignissimos unde deleniti consequatur quae, repellat debitis sunt, est rerum!"
-          />
-          <Post
-            author="Neymar"
-            content="Um novo post muito legal"
-          />
+          {posts.map(post => {
+            return (
+              <Post
+                author={post.author}
+                content={post.content}
+                publishedAt={post.publishedAt}
+              />
+            )
+          })}
         </main>
       </div>
     </div>
