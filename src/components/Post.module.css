@@ -8,6 +8,12 @@
     margin-top: 2rem;
 }
 
+.content {
+    line-height: 1.6;
+    color: var(--gray-300);
+    margin-top: 1.5rem;
+}
+
 .content p {
     margin-top: 1rem;
 }
@@ -71,7 +77,7 @@
     resize: none;
     height: 6rem;
     padding: 1rem;
-    border-radius: 8px;
+    border-radius: 0.25rem;
     color: var(--gray-100);
     line-height: 1.4;
     margin-top: 1rem;
@@ -87,7 +93,7 @@
     max-height: none;
 }
 
-.commentForm button[type=submit] {
+.commentForm button[type="submit"] {
     padding: 1rem 1.5rem;
     margin-top: 1rem;
     border-radius: 8px;
@@ -100,6 +106,15 @@
     transition: background-color 0.1s;
 }
 
-.commentForm button[type=submit]:hover {
+.commentForm button[type="submit"]:not(:disabled):hover {
     background: var(--yellow-300);
+}
+
+.commentForm button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.commentList {
+    margin-top: 2rem;
 }

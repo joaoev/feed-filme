@@ -37,14 +37,14 @@
 }
 
 .sidebar footer a {
+    width: 100%;
     background: transparent;
     color: var(--yellow-500);
     border: 1px solid var(--yellow-500);
     border-radius: 8px;
     height: 50px;
-    padding: 0 1.5rem;
+    padding: 0 1rem;
     font-weight: bold;
-    display: block;
     text-decoration: none;
 
     display: flex;
@@ -52,11 +52,11 @@
     justify-content: center;
 
     gap: 0.5rem;
+
+    transition: color 0.1s, background-color 0.1s;
 }
 
 .sidebar footer a:hover {
     background: var(--yellow-500);
     color: var(--white);
-
-    transition: color 0.1s, background-color 0.1s;
 }
