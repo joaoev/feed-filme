@@ -30,9 +30,7 @@ interface PostProps {
 }
 
 export function Post({ post }: PostProps) {
-    const [comments, setComments] = useState([
-        'Post muito bacana, hein?!'
-    ]);
+    const [comments, setComments] = useState<string[]>([]);
 
     const [newCommentText, setNewCommentText] = useState('');
 
@@ -75,7 +73,7 @@ export function Post({ post }: PostProps) {
         <article className={styles.post}>
             <header>
                 <div className={styles.author}>
-                    <Avatar src={post.author.avatarUrl} />
+                    <Avatar src={post.author.avatarUrl}/>
                     <div className={styles.authorInfo}>
                         <strong>{post.author.name}</strong>
                         <span>{post.author.role}</span>
@@ -92,7 +90,7 @@ export function Post({ post }: PostProps) {
                     if (line.type === 'paragraph') {
                         return <p key={line.content}>{line.content}</p>;
                     } else if (line.type === 'link') {
-                        return <p key={line.content}><a href="#">{line.content}</a></p>
+                        return <p key={line.content}> <a href={line.content} target="_blank" rel="noreferrer">{line.content}</a></p>
                     }
                 })}
             </div>

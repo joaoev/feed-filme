@@ -1,4 +1,5 @@
 import { ThumbsUp, Trash } from 'phosphor-react'
+import avatar from '../assets/avatar-0.png';
 import styles from './Comment.module.css'
 import { Avatar } from './Avatar'
 import { useState } from 'react'
@@ -20,13 +21,14 @@ export function Comment({ content, onDeleteComment }: CommentProps) {
     }
     return (
         <div className={styles.comment}>
-            <Avatar src="https://github.com/joaoev.png" hasBorder={false} />
+            <Avatar hasBorder={false} src={avatar}
+  alt="Avatar de usuário"/>
 
             <div className={styles.commentBox}>
                 <div className={styles.commentContent}>
                     <header>
                         <div className={styles.authorAndTime}>
-                            <strong>João</strong>
+                            <strong>John Doe</strong>
                             <time title='11 de Janeiro às 16:16h' dateTime='2024-01-11'>Cerca de 1h atrás</time>
                         </div>
 
